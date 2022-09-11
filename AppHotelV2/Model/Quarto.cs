@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppHotelV2.Model
 {
-    internal class Quarto
+    public class Quarto
     {
     }
 }
