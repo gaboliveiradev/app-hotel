@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace AppHotelV2
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace AppHotelV2.View
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ExtratoHospedagem : ContentPage
     {
-        public MainPage()
+        public ExtratoHospedagem()
         {
             InitializeComponent();
         }
