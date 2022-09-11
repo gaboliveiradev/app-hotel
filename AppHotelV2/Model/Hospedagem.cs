@@ -40,9 +40,3 @@ namespace AppHotelV2.Model
         }
     }
 }
-
-            }
-        }
-
-    }
-}
