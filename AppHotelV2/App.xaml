@@ -5,6 +5,7 @@
 
     <Application.Resources>
 
+        <!-- Hospedagem -->
         <Style TargetType="Frame">
             <Setter Property="CornerRadius" Value="10" />
             <Setter Property="BackgroundColor" Value="White" />
@@ -30,6 +31,29 @@
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+        
+        
+        <!-- Login -->
+        <Style TargetType="Frame" x:Key="FrameLogin">
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonLogin">
+            <Setter Property="BackgroundColor" Value="Purple" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="LabelLogin">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="TextTransform" Value="Uppercase" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Padding" Value="0, 15, 0, 0" />
         </Style>
 
     </Application.Resources>
