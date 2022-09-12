@@ -15,6 +15,7 @@ namespace AppHotelV2.View
         public ExtratoHospedagem()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
