@@ -1,12 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppHotelV2.View.ExtratoHospedagem">
+             x:Class="AppHotelV2.View.ExtratoHospedagem"
+             Title="{Binding Path=Suite.Descricao}"
+             BackgroundColor="DarkOliveGreen">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10">
+            
+            <Label Text="Detalhes da Estadia" Style="{StaticResource Titulo}" />
+
+            <Label Text="{Binding Suite.Descricao}" TextColor="White" TextTransform="Uppercase" FontAttributes="Bold" />
+
+            <Frame Margin="10">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Adultos" />
+                        <Label Text="{Binding QntAdultos}" TextColor="DarkRed" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Crianças" />
+                        <Label Text="{Binding QntCriancas}" TextColor="DarkRed" />
+                    </StackLayout>
+                    
+                </StackLayout>
+            </Frame>
+
+            <Frame Margin="10">
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Check-in:" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Check-out:" />
+                    <Label Grid.Row="0" Grid.Column="2" Text="Estadia:" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="DarkRed" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="DarkRed" />
+                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}" TextColor="DarkRed" />
+                </Grid>
+            </Frame>
+
+            <Frame Margin="10">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    
+                    <Label Text="Valor Total:" />
+                    <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}" TextColor="DarkRed" FontAttributes="Bold" />
+                    
+                </StackLayout>
+            </Frame>
+
+            <Button Text="Voltar" Clicked="Button_Clicked" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
