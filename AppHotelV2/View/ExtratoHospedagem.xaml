@@ -39,6 +39,16 @@
             </Frame>
 
             <Frame Margin="10">
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Inteira:" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Meia:" />
+
+                    <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" Text="{ Binding Suite.ValorDiariaAdulto, StringFormat='{}{0:c}' }" />
+                    <Label Grid.Row="1" Grid.Column="1" FontAttributes="Bold" Text="{ Binding Suite.ValorDiariaCrianca, StringFormat='{}{0:c}' }" />
+                </Grid>
+            </Frame>
+
+            <Frame Margin="10">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
 
                     <Label FontAttributes="Bold" Text="Valor Total:" />
@@ -47,7 +57,7 @@
                 </StackLayout>
             </Frame>
 
-            <Button Padding="0 150" Text="Voltar" Clicked="Button_Clicked" />
+            <Button Padding="150, 0" Text="Voltar" Clicked="Button_Clicked" />
 
         </StackLayout>
     </ContentPage.Content>
