@@ -19,10 +19,10 @@
                     <Label Text="Login Hotel" FontSize="Title" Style="{ StaticResource LabelLogin }" />
 
                     <Label Text="Usuário" Style="{ StaticResource LabelLoginUserPass }" />
-                    <Entry x:Name="txt_usuario" Placeholder="" />
+                    <Entry x:Name="txt_usuario" TextColor="#000" />
 
                     <Label Text="Senha" Style="{ StaticResource LabelLoginUserPass }" />
-                    <Entry x:Name="txt_senha" IsPassword="True" Placeholder="" />
+                    <Entry x:Name="txt_senha" IsPassword="True" TextColor="#000" />
 
                     <Button Margin="10" Padding="100, 0" Style="{ StaticResource ButtonLogin }" Text="Entrar" Clicked="Button_Clicked" />
                 </StackLayout>

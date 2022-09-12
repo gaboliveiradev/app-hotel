@@ -46,18 +46,16 @@ namespace AppHotelV2.View
         {
             try
             {
-                Hospedagem h = new Hospedagem()
-                {
-                    QntAdultos = Convert.ToInt32(stp_adultos.Value),
-                    QntCriancas = Convert.ToInt32(stp_criancas.Value),
-                    Suite = (Quarto)pck_quarto.SelectedItem,
-                    DataCheckIn = dtpck_checkin.Date,
-                    DataCheckOut = dtpck_checkout.Date
-                };
-
                 Navigation.PushAsync(new ExtratoHospedagem()
                 {
-                    BindingContext = h
+                    BindingContext = new Hospedagem()
+                    {
+                        QntAdultos = Convert.ToInt32(stp_adultos.Value),
+                        QntCriancas = Convert.ToInt32(stp_criancas.Value),
+                        Suite = (Quarto)pck_quarto.SelectedItem,
+                        DataCheckIn = dtpck_checkin.Date,
+                        DataCheckOut = dtpck_checkout.Date
+                    }
                 });
             } catch (Exception err)
             {
