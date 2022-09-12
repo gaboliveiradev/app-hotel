@@ -3,25 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppHotelV2.View.OrcamentoHospedagem"
              Title="Contratação Hospedagem"
-             BackgroundColor="DarkOliveGreen">
+             BackgroundColor="#d3d3d3">
     
     <ContentPage.Content>
-        <StackLayout Padding="10">
-            <Label Text="Calculo da Diária" VerticalOptions="Center" Style="{StaticResource Titulo}" />
-
-            <Frame Padding="5">
+        <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame Margin="10" Padding="15">
                 <StackLayout>
                     <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, 2*">
                         
                         <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" />
                         <Label Grid.Row="0" Grid.Column="1" Text="{Binding Value}" FontAttributes="Bold"
-                               BindingContext="{x:Reference stp_adultos}" TextColor="DarkRed"
+                               BindingContext="{x:Reference stp_adultos}" TextColor="#8557bf"
                         />
                         <Stepper Grid.Row="0" Grid.Column="2" x:Name="stp_adultos" Minimum="0" Maximum="10" Increment="1" />
 
                         <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" />
                         <Label Grid.Row="1" Grid.Column="1" BindingContext="{x:Reference stp_criancas}"
-                               Text="{Binding Value}" TextColor="DarkRed" FontAttributes="Bold" 
+                               Text="{Binding Value}" TextColor="#8557bf" FontAttributes="Bold" 
                         />
                         <Stepper Grid.Row="1" Grid.Column="2" x:Name="stp_criancas" Minimum="0" Maximum="10" Increment="1" />
 
@@ -30,7 +28,7 @@
                     <Label Text="Escolha uma Suíte" FontAttributes="Bold" TextTransform="Uppercase" FontSize="Small" Margin="0, 10" />
                     <Picker x:Name="pck_quarto" ItemDisplayBinding="{Binding Descricao}" Title="Selecione sua Acomodação" HorizontalTextAlignment="Center"/>
 
-                    <Frame Margin="45, 5" Padding="5" BackgroundColor="#EEE">
+                    <Frame Margin="45, 20" Padding="5" BackgroundColor="#EEE">
                         <StackLayout HorizontalOptions="CenterAndExpand">
                             
                             <Label Text="Período de Estadia" FontAttributes="Bold" TextTransform="Uppercase" FontSize="Small" />
@@ -47,7 +45,7 @@
                         </StackLayout>
                     </Frame>
 
-                    <Button Text="Consultar minha Estadia" TextTransform="Uppercase" Clicked="Button_Clicked" />
+                    <Button Margin="20, 10" Text="Consultar minha Estadia" TextTransform="Uppercase" Clicked="Button_Clicked" />
 
                 </StackLayout>
             </Frame>

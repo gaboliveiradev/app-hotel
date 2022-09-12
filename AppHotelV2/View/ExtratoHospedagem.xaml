@@ -2,25 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppHotelV2.View.ExtratoHospedagem"
-             BackgroundColor="DarkOliveGreen">
+             BackgroundColor="#d3d3d3">
     
     <ContentPage.Content>
         <StackLayout Padding="10">
             
             <Label Text="Detalhes da Estadia" Style="{StaticResource Titulo}" />
 
-            <Label Text="{Binding Suite.Descricao}" TextColor="White" TextTransform="Uppercase" FontAttributes="Bold" />
+            <Label Text="{Binding Suite.Descricao}" TextColor="#9d6dd7" TextTransform="Uppercase" FontAttributes="Bold" />
 
             <Frame Margin="10">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    
+
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Adultos" />
-                        <Label Text="{Binding QntAdultos}" TextColor="DarkRed" />
+                        <Label Text="{Binding QntAdultos}" TextColor="DarkRed" FontAttributes="Bold" />
+                        <Label Text="Adultos e" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding QntCriancas}" FontAttributes="Bold" TextColor="DarkRed" />
                         <Label Text="Crianças" />
-                        <Label Text="{Binding QntCriancas}" TextColor="DarkRed" />
                     </StackLayout>
                     
                 </StackLayout>
@@ -32,22 +32,22 @@
                     <Label Grid.Row="0" Grid.Column="1" Text="Check-out:" />
                     <Label Grid.Row="0" Grid.Column="2" Text="Estadia:" />
 
-                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="DarkRed" />
-                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="DarkRed" />
-                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}" TextColor="DarkRed" />
+                    <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="DarkRed" />
+                    <Label Grid.Row="1" Grid.Column="1" FontAttributes="Bold" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="DarkRed" />
+                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}" FontAttributes="Bold" TextColor="DarkRed" />
                 </Grid>
             </Frame>
 
             <Frame Margin="10">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    
-                    <Label Text="Valor Total:" />
+
+                    <Label FontAttributes="Bold" Text="Valor Total:" />
                     <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}" TextColor="DarkRed" FontAttributes="Bold" />
                     
                 </StackLayout>
             </Frame>
 
-            <Button Text="Voltar" Clicked="Button_Clicked" />
+            <Button Padding="0 150" Text="Voltar" Clicked="Button_Clicked" />
 
         </StackLayout>
     </ContentPage.Content>

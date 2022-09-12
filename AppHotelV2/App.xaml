@@ -14,21 +14,22 @@
             <Setter Property="FontSize" Value="Medium" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="VerticalTextAlignment" Value="Center" />
-            <Setter Property="TextColor" Value="DarkOliveGreen" />
+            <Setter Property="TextColor" Value="#3c1575" />
         </Style>
 
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="DarkRed" />
+            <Setter Property="BackgroundColor" Value="#8557bf" />
             <Setter Property="CornerRadius" Value="15" />
             <Setter Property="TextColor" Value="White" />
             <Setter Property="HorizontalOptions" Value="Center" />
         </Style>
 
         <Style TargetType="Label" x:Key="Titulo">
-            <Setter Property="FontSize" Value="60" />
-            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="50" />
+            <Setter Property="TextColor" Value="##" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            <Setter Property="FontAttributes" Value="Bold" />
         </Style>
 
     </Application.Resources>
