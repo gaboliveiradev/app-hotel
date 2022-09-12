@@ -24,16 +24,7 @@
             <Setter Property="HorizontalOptions" Value="Center" />
         </Style>
 
-        <Style TargetType="Label" x:Key="fontBenne">
-            <Setter Property="FontFamily">
-                <Setter.Value>
-                    <OnPlatform x:TypeArguments="x:String"
-                                Android="Benne-Regular.ttf#Benne-Regular" />
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style TargetType="Label" x:Key="Titulo" BaseResourceKey="fontBenne">
+        <Style TargetType="Label" x:Key="Titulo">
             <Setter Property="FontSize" Value="60" />
             <Setter Property="TextColor" Value="White" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />

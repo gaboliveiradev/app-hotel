@@ -3,10 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppHotelV2.View.OrcamentoHospedagem">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10">
+            <Label Text="Calculo da Diária" VerticalOptions="Center" Style="{StaticResource Titulo}" />
+
+            <Frame Padding="5">
+                <StackLayout>
+                    <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, 2*">
+                        
+                        <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Value}" FontAttributes="Bold"
+                               BindingContext="{x:Reference stp_adultos}" TextColor="DarkRed"
+                        />
+                        <Stepper Grid.Row="0" Grid.Column="2" x:Name="stp_adultos" Minimum="0" Maximum="10" Increment="1" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" />
+                        <Label Grid.Row="1" Grid.Column="1" BindingContext="{x:Reference stp_criancas}"
+                               Text="{Binding Value}" TextColor="DarkRed" FontAttributes="Bold" 
+                        />
+                        <Stepper Grid.Row="1" Grid.Column="2" x:Name="stp_criancas" Minimum="0" Maximum="10" Increment="1" />
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
