@@ -26,4 +26,5 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+    <Folder Include="NovaPasta\" />
 </Project>
