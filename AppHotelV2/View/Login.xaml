@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotelV2.View.Login" Padding="10">
+    
+    <ContentPage.Background>
+        <LinearGradientBrush  StartPoint="0,1" EndPoint="1,0">
+            <GradientStop Color="#d3d3d3" Offset="0.3" />
+            <GradientStop Color="#e3e3e3" Offset="1.1" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Frame Margin="5" Style="{ StaticResource FrameLogin }">
+                <StackLayout>
+
+                    <Label Text="Login Hotel" FontSize="Title" Style="{ StaticResource LabelLogin }" />
+
+                    <Label Text="Usuário" Style="{ StaticResource LabelLoginUserPass }" />
+                    <Entry x:Name="txt_usuario" Placeholder="" />
+
+                    <Label Text="Senha" Style="{ StaticResource LabelLoginUserPass }" />
+                    <Entry x:Name="txt_senha" IsPassword="True" Placeholder="" />
+
+                    <Button Margin="10" Padding="100, 0" Style="{ StaticResource ButtonLogin }" Text="Entrar" Clicked="Button_Clicked" />
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

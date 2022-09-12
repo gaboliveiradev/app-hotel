@@ -40,7 +40,7 @@ namespace AppHotelV2
             InitializeComponent();
             Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
-            MainPage = new NavigationPage(new OrcamentoHospedagem());
+            MainPage = new NavigationPage(new Login());
         }
 
         protected override void OnStart()

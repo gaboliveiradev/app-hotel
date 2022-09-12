@@ -56,5 +56,12 @@
             <Setter Property="Padding" Value="0, 15, 0, 0" />
         </Style>
 
+        <Style TargetType="Label" x:Key="LabelLoginUserPass">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="TextTransform" Value="Uppercase" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Padding" Value="0, 15, 0, 0" />
+        </Style>
+
     </Application.Resources>
 </Application>
