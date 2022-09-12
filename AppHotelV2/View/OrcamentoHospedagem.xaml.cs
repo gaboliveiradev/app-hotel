@@ -16,5 +16,15 @@ namespace AppHotelV2.View
         {
             InitializeComponent();
         }
+
+        private void dtpck_checkin_DateSelected(object sender, DateChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
