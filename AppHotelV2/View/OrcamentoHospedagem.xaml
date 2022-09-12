@@ -7,7 +7,6 @@
     
     <ContentPage.Content>
         <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
-            <ImageButton />
             <Frame Margin="10" Padding="15">
                 <StackLayout>
                     <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, 2*">
@@ -50,6 +49,11 @@
 
                 </StackLayout>
             </Frame>
+
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, 2*">
+                <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Meu Perfil" HorizontalOptions="Start" />
+                <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Desconectar" HorizontalOptions="End" Clicked="btn_desconectar" />
+            </Grid>
 
         </StackLayout>
     </ContentPage.Content>

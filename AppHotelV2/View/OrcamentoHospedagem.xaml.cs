@@ -64,5 +64,17 @@ namespace AppHotelV2.View
                 DisplayAlert("Ops", err.Message, "OK");
             }
         }
+
+        private async void btn_desconectar(object sender, EventArgs e)
+        {
+            bool confirmacao = await DisplayAlert($"{App.Current.Properties["usuario_logado"].ToString()} você tem certeza?", "Sair do App?", "Sim", "Não");
+
+            if (confirmacao)
+            {
+                App.Current.Properties.Remove("usuario_logado");
+
+                App.Current.MainPage = new Login();
+            }
+        }
     }
 }
