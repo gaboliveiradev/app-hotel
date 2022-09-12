@@ -22,6 +22,7 @@ namespace AppHotelV2.View
         {
             InitializeComponent();
             PropriedadesApp = (App)Application.Current;
+            NavigationPage.SetHasNavigationBar(this, false);
 
             pck_quarto.ItemsSource = PropriedadesApp.lista_quartos;
 
