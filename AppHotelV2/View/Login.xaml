@@ -19,10 +19,10 @@
                     <Label Text="Login Hotel" FontSize="Title" Style="{ StaticResource LabelLogin }" />
 
                     <Label Text="Email" Style="{ StaticResource LabelLoginUserPass }" />
-                    <Entry x:Name="txt_email" TextColor="#000" />
+                    <Entry Placeholder="seu@email.com"  x:Name="txt_email" TextColor="#000" />
 
                     <Label Text="Senha" Style="{ StaticResource LabelLoginUserPass }" />
-                    <Entry x:Name="txt_senha" IsPassword="True" TextColor="#000" />
+                    <Entry Placeholder="sua senha" x:Name="txt_senha" IsPassword="True" TextColor="#000" />
 
                     <Button Margin="10" Padding="100, 0" Style="{ StaticResource ButtonLogin }" Text="Entrar" Clicked="Button_Clicked" />
                 </StackLayout>
