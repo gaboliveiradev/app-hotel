@@ -7,15 +7,19 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AppHotelV2.Model;
 
 namespace AppHotelV2.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
+        App PropriedadesApp;
+
         public Login()
         {
             InitializeComponent();
+            PropriedadesApp = (App)Application.Current;
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
@@ -23,34 +27,14 @@ namespace AppHotelV2.View
         {
             try
             {
-                List<DadosUsuario> list_usuarios = new List<DadosUsuario>
-                {
-                    new DadosUsuario
-                    {
-                        Usuario = "Gabriel Oliveira",
-                        Senha = "dev@2022"
-                    },
-                    new DadosUsuario
-                    {
-                        Usuario = "Aluno",
-                        Senha = "etecjau"
-                    }
-                };
+                string email = txt_email.Text;
+                string senha = txt_senha.Text;
 
-                DadosUsuario dados_digitados = new DadosUsuario()
+                if (PropriedadesApp.list_usuarios.Any(i => (i.Email == email && i.Senha == senha)))
                 {
-                    Usuario = txt_usuario.Text,
-                    Senha = txt_senha.Text
-                };
-
-                if(list_usuarios.Any(i => (i.Usuario == dados_digitados.Usuario && i.Senha == dados_digitados.Senha)))
-                {
-                    App.Current.Properties.Add("usuario_logado", txt_usuario.Text);
+                    App.Current.Properties.Add("usuario_logado", email);
                     App.Current.MainPage = new OrcamentoHospedagem();
-                } else
-                {
-                    throw new Exception("Dados Incorretos, tente novamente.");
-                }
+                } else throw new Exception("Dados incorretos, tente novamente.");
             } catch (Exception err)
             {
                 DisplayAlert("Ooops", err.Message, "OK");

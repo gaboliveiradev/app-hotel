@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
@@ -35,12 +34,37 @@ namespace AppHotelV2
             }
         };
 
+        public List<DadosUsuario> list_usuarios = new List<DadosUsuario>
+        {
+            new DadosUsuario()
+            {
+                Email = "eduardo@etec.com",
+                Nome = "Eduardo Frasson",
+                Senha = "123"
+            },
+            new DadosUsuario()
+            {
+                Email = "gabriel@etec.com",
+                Nome = "Gabriel Oliveira",
+                Senha = "123"
+            },
+            new DadosUsuario()
+            {
+                Email = "aluno@etec.com",
+                Nome = "Aluno",
+                Senha = "123"
+            }
+        };
+
         public App()
         {
             InitializeComponent();
             Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
-            MainPage = new NavigationPage(new Login());
+            if(Properties.ContainsKey("usuario_logado"))
+                MainPage = new NavigationPage(new OrcamentoHospedagem());
+            else
+                MainPage = new NavigationPage(new Login());
         }
 
         protected override void OnStart()

@@ -26,7 +26,7 @@
                     </Grid>
 
                     <Label Text="Escolha uma Suíte" FontAttributes="Bold" TextTransform="Uppercase" FontSize="Small" Margin="0, 10" />
-                    <Picker x:Name="pck_quarto" TextColor="Gray" ItemDisplayBinding="{Binding Descricao}" Title="Selecione sua Acomodação" HorizontalTextAlignment="Center"/>
+                    <Picker x:Name="pck_quarto" TitleColor="Gray" ItemDisplayBinding="{Binding Descricao}" Title="Selecione sua Acomodação" HorizontalTextAlignment="Center"/>
 
                     <Frame Margin="45, 20" Padding="5" BackgroundColor="#EEE">
                         <StackLayout HorizontalOptions="CenterAndExpand">

@@ -18,8 +18,8 @@
 
                     <Label Text="Login Hotel" FontSize="Title" Style="{ StaticResource LabelLogin }" />
 
-                    <Label Text="Usuário" Style="{ StaticResource LabelLoginUserPass }" />
-                    <Entry x:Name="txt_usuario" TextColor="#000" />
+                    <Label Text="Email" Style="{ StaticResource LabelLoginUserPass }" />
+                    <Entry x:Name="txt_email" TextColor="#000" />
 
                     <Label Text="Senha" Style="{ StaticResource LabelLoginUserPass }" />
                     <Entry x:Name="txt_senha" IsPassword="True" TextColor="#000" />

@@ -12,9 +12,12 @@ namespace AppHotelV2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExtratoHospedagem : ContentPage
     {
+        App PropriedadesApp;
+
         public ExtratoHospedagem()
         {
             InitializeComponent();
+            PropriedadesApp = (App)Application.Current;
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
@@ -22,8 +25,7 @@ namespace AppHotelV2.View
         {
             try
             {
-                Navigation.PopAsync();
-
+                App.Current.MainPage = new OrcamentoHospedagem();
             }
             catch (Exception ex)
             {

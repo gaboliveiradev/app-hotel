@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppHotelV2.Model;
-using AppHotelV2.View;
 
 
 namespace AppHotelV2.View
@@ -46,17 +45,22 @@ namespace AppHotelV2.View
         {
             try
             {
-                Navigation.PushAsync(new ExtratoHospedagem()
+                if (Convert.ToInt32(stp_adultos.Value) <= 0) 
+                    throw new Exception("Você deve selecionar pelo menos uma pessoa de +18.");
+                else
                 {
-                    BindingContext = new Hospedagem()
+                    App.Current.MainPage = new ExtratoHospedagem()
                     {
-                        QntAdultos = Convert.ToInt32(stp_adultos.Value),
-                        QntCriancas = Convert.ToInt32(stp_criancas.Value),
-                        Suite = (Quarto)pck_quarto.SelectedItem,
-                        DataCheckIn = dtpck_checkin.Date,
-                        DataCheckOut = dtpck_checkout.Date
-                    }
-                });
+                        BindingContext = new Hospedagem()
+                        {
+                            QntAdultos = Convert.ToInt32(stp_adultos.Value),
+                            QntCriancas = Convert.ToInt32(stp_criancas.Value),
+                            Suite = (Quarto)pck_quarto.SelectedItem,
+                            DataCheckIn = dtpck_checkin.Date,
+                            DataCheckOut = dtpck_checkout.Date
+                        }
+                    };
+                }
             } catch (Exception err)
             {
                 DisplayAlert("Ops", err.Message, "OK");
@@ -65,13 +69,18 @@ namespace AppHotelV2.View
 
         private async void btn_desconectar(object sender, EventArgs e)
         {
-            bool confirmacao = await DisplayAlert($"{App.Current.Properties["usuario_logado"].ToString()} você tem certeza?", "Sair do App?", "Sim", "Não");
-
-            if (confirmacao)
+            try
             {
-                App.Current.Properties.Remove("usuario_logado");
+                bool confirm = await DisplayAlert("Tem certeza?", "Desconectar sua conta?", "Sim", "Não");
 
-                App.Current.MainPage = new Login();
+                if (confirm)
+                {
+                    App.Current.Properties.Remove("usuario_logado");
+                    App.Current.MainPage = new Login();
+                }
+            } catch (Exception err)
+            {
+                DisplayAlert("Ooops", err.Message, "OK");
             }
         }
     }
